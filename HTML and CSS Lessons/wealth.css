@@ -1,0 +1,30 @@
+#logo {
+  text-align: left;
+  background: white;
+  color: black;
+  padding: 5px 10px;
+  display: inline-block;
+  font-size: 1.2em;
+  float: right;
+}
+h4, h5 {
+  background: rgb(118, 81, 161);
+  color: white;
+  font-size:20px;
+}
+body {
+  background: rgb(255, 237, 207);
+}
+header {
+  background: rgb(42, 45, 124);
+ color: white;
+ height:140px;
+ text-align: left;
+}
+h2, h3 {
+  font-size: 20px;;
+}
+sup a {
+  background: none;
+  color: white;
+}

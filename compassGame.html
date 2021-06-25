@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .greenBorder {
+        outline: none;
+        border: 2px solid green;
+      }
+      .redBorder {
+        border: 2px solid red;
+      }
+      .redBorder:focus {
+        outline: none;
+        border: 2px solid red;
+        box-shadow: 0px 00px 5px red;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <label for="a">a :</label>
+    <input oninput="validate(this)"
+           onfocus="validate(this)"
+           type="number" name="a" min="-99" max="99">
+
+    <label for="b">b :</label>
+    <input oninput="validate(this)"
+           onfocus="validate(this)"
+           type="number" name="b" min="-99" max="99">
+
+     <label for="c">c :</label>
+     <input oninput="validate(this)"
+            onfocus="validate(this)"
+            type="number" name="c" min="-99" max="99">
+    <br><br>
+
+    <input type="button" onclick="calculate()" value="Calculate">
+
+    <script type="text/javascript">
+
+      function validate(el) {
+        // console.log(typeof el.value);
+        if(
+            (+el.value < -99 || +el.value > 99) ||
+            (el.name === 'a' && +el.value === 0) ||
+            el.value === '' ||
+            !Number.isInteger(+el.value)
+          ) {
+          // console.log('out of range');
+          el.className = "redBorder";
+          return false;
+        }
+        else {
+          el.className = "greenBorder";
+          return true;
+        }
+      }
+
+      function calculate() {
+
+        let message = "";
+        let inputs = document.querySelectorAll('input[type=number]');
+
+        for (var i = 0; i < inputs.length; i++) {
+          // console.log(+inputs[i].value);
+          if( inputs[i].name === 'a' && !validate(inputs[i])) {
+            message += 'Invalid entry for a. Must be non-zero integer between -99 and 99\n';
+          }
+          else if(!validate(inputs[i])) {
+            message += `Invalid entry for ${inputs[i].name}. Must be an integer between -99 and 99\n`;
+            // message += 'Invalid entry for ' + inputs[i].name
+            //             + '. Must be an integer between -99 and 99\n';
+          }
+        }
+
+        if(message.trim() === "") {
+          // do calculation
+
+        }
+        else {
+          alert(message);
+        }
+      }
+
+      let a= -5, b= 5, c= 5;
+     let x1, x2;
+      if(b * b < 4 * a * c) {
+        console.log('Solution: x’s roots are imaginary');
+      }
+      else if(b * b === 4 * a * c) {
+        x1 = -b / (2 * a);
+        console.log('Solution: x = ' + x1);
+      }
+      else {
+        // b * b   // 81 ** 0.5;   // Math.sqrt(81); 9^2
+        let d =  Math.pow(b, 2) - 4 * a * c;
+        x1 = (-b + d ** 0.5)/(2 * a);
+        x2 = (-b - d ** 0.5)/(2 * a);
+        console.log(x1 + " " + x2);
+      }
+    </script>
+
+  </body>
+</html>
+
+

@@ -1,0 +1,50 @@
+PROGRAM  BANK BALANCE 
+       
+        PRINT "CUSTOMER_NAME"
+	    SET Alive
+	    PRINT "Please enter your starting balance?"   // 10,000
+        SET BALANCE
+	    PRINT "BALANCE_YEAR"
+	    SET BALANCE_YEAR
+		
+		PRINT "What is the  CUSTOMER_NAME ?"
+		
+		WHILE Is " + CUSTOMER_NAME + ?" (y/n)
+        INPUT alive Y <-y
+	        IS BALANCE_YEAR is less than 4 years
+			IF yes
+				BALANCE = BALANCE * 2
+			    BALANCE is equal to 100,000 or greater
+		ENDIF
+		    IS BALANCE_YEAR is less than 7 years
+			IF yes
+				BALANCE = BALANCE * 2
+			    BALANCE is equal to 1,000,000 or greater
+		 
+		    IF Yes CUSTOMER receive money
+				    PRINT money is safe
+				ELSE
+                    PRINT lost money 				
+	        <- N 
+		ENDIF
+			  
+		<-N	   
+		Bank receives money	   
+			   
+ENDWHILE	   
+	   
+	   
+	    
+        
+	   
+
+
+
+	    
+	   
+	   
+	   
+	   
+          
+
+   

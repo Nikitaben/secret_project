@@ -1,0 +1,55 @@
+/*
+   selector(s) { property: value;}
+*/
+
+{
+  /* text-align: center; */
+  font-family: Arial;
+}
+​
+.bolded {
+  font-weight: bold;
+}
+​
+.underlined {
+  text-decoration: underline;
+}
+​
+#my-id {
+  background: lime;
+}
+​
+h1 + p {
+  color: red;
+}
+​
+[title="example"] {
+  color: blue;
+}
+​
+[title="a title"] {
+  color: #990000;
+}
+​
+/*
+h1, h3, h5 {
+  color: blue;
+}
+​
+p > span {
+  background: yellow;
+}
+​
+h1 {
+  font-family: Arial;
+  font-size: 14px;
+}
+​
+h3 {
+​
+}
+​
+h5 {
+​
+}
+*/

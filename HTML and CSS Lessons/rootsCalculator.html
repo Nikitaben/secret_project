@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quadratic Equation Roots</title>
+    <style>
+    .redBorder {
+      border: 2px solid green;
+    }
+    .redBorder:focus {
+      outline: none;
+      border: 2px solid red;
+      box-shadow: 0px 00px 5px red;
+    }
+    .greenborder {
+      border: 2px solid green;
+      outline: none;
+    }
+    </style>
+  </head>
+
+  <body>
+    <h1>Quadratic Equation Roots Calculator</h1>
+    <p>This web page finds the roots of a polynomial equation of the following form:<br>
+    ax<sup>2</sup>+bx+c=0</p>
+    <br>
+    <p>a, b, and c must be integers between -99 and +99, and a must be non-zero.</p>
+    <br>
+    <form id="validate">
+
+
+    <label for="a">a:</label>
+    <input oninput="validate(this)"
+           onfocus="validate(this)"
+           type="number" name="a" min="-99" max="99">
+
+    <label for="b">b:</label>
+    <input oninput="validate(this)"
+           onfocus="validate(this)"
+           type="number" name="b" min="-99" max="99">
+
+    <label for="c">c:</label>
+    <input oninput="validate(this)"
+           onfocus="validate(this)"
+           type="number" name="c" min="-99" max="99">
+    <br>
+    <br>
+    <input type="button" value="Calculate Roots"        onclick="calculateRoots(this.form)">
+
+    </form>
+    <p id=answers></p>
+    <p id= x1></p>
+    <p id=x2></p>
+
+    <script type="text/javascript">
+
+
+            function validate(el) {
+             if(
+             (+el.value < -99 || +el.value > 99) ||
+             (el.name === 'a'&& +el.value === 0) ||
+             el.value === '' ||
+             !Number.isInteger(+el.value)
+           ) {
+             // console.log('out of range');
+             el.className ="redBorder";
+              return false;
+           }
+           else {
+             el.className = "greenBorder";
+              return true;
+           }
+    }
+
+
+      function calculateRoots(form) {
+        let a = form.elements["a"].value;
+        let b = form.elements["b"].value;
+        let c = form.elements["c"].value;
+
+        let message = "";
+        let inputs =
+       document.querySelectorAll('input[type=number]');
+        let results = document.getElementById('answers');
+
+
+        for (var i = 0; i < inputs.length; i++) {
+            console.log(+inputs[i].value);
+          if( inputs[i].name === 'a' && !validate(inputs[i])) {
+          message +='Invalid entry for a. Must be non-zero integer between -99 and 99\n';
+
+                      }
+          else if (!validate(inputs[i])) {
+          message +=  `Invalid entry for ${inputs[i].name}. Must be integer between -99 and 99\n`;
+
+      }
+        }
+        if (message.trim() === "") {
+
+        }
+        else{
+          alert(message);
+        }
+ let = x1, x2;
+        if (b * b < 4 * a * c) {
+
+
+            results.innerHTML = "Solution:x's roots are imaginary";
+
+        }
+        else if (b * b === 4 * a * c) {
+          x1 = x2 = -b / (2 * a);
+
+          results.innerHTML = "Solution: x = " + x1;
+
+        }
+        else {
+
+          x1 = ((-b) + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+
+          x2 = ((-b) - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+            results.innerHTML = "Solution: x = " + x1 + " x = " + x2;
+        }
+
+
+      }
+
+    </script>
+  </body>
+
+</html>

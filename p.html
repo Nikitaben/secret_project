@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quadratic Equation Roots</title>
+  </head>
+  <style>
+  .redBorder {
+    border: 2px solid green;
+  }
+  .redBorder:focus {
+    outline: none;
+    border: 2px solid red;
+    box-shadow: 0px 00px 5px red;
+  }
+  .greenborder {
+    border: 2px solid green;
+    outline: none;
+  }
+  </style>
+  <body>
+    <h1>Quadratic Equation Roots Calculator</h1>
+    <p>This web page finds the roots of a polynomial equation of the following form:<br>
+    ax<sup>2</sup>+bx+c=0</p>
+    <br>
+    <p>a, b, and c must be integers between -99 and +99, and a must be non-zero.</p>
+    <br>
+    <form id="validation">
+
+
+    <label for="a">a:</label>
+    <input oninput="validation(this)"
+    onfocus="validation(this)
+    "type="number" id="a" min="-99" max="99">
+
+    <label for="b">b:</label>
+    <input oninput="validation(this)"
+    onfocus="validation(this)
+    "type="number" id="b" min="-99" max="99">
+
+    <label for="c">c:</label>
+    <input oninput="validation(this)"
+    onfocus="validation(this)
+    "type="number" id="c" min="-99" max="99">
+    <br>
+    <br>
+    <input type="button" id="solutionSubmit" value="Calculate Roots"onclick="calculateRoots()">
+
+    </form>
+    <script type="text/javascript">
+
+      function calcutaeRoots(form) {
+        let a = form.elements["a"].value;
+        let b = form.elements["b"].value;
+        let c = form.elements["c"].value;
+        let message = "";
+        let inputs = documents.querySelectorAll('input[type=number]');
+      }
+      
+    </script>
+  </body>
+</html>
+
+

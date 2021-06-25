@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <meta charset="utf-8">
+
+    <title>Story Generator</title>
+  </head>
+  <style>
+
+  label {
+  text-align: right;
+  padding-right: 1em;
+}
+  </style>
+  <script type="text/javascript">
+      function doneHandler() {
+
+        let inputs = document.querySelectorAll('input[type=text]');
+        let missing = document.querySelectorAll('b');
+
+        //console.log(inputs)
+        //console.log(missing text)
+for (var i = 0; i <input.length; i++) {
+  if(inputs[i].value.trim() === '') {
+  missing[i].innerHTML = '&lt;missing&nsbp;text&gt;';
+  missing[i].style.color = 'red';
+}
+else {
+  missing[i].innerHTML = input[i].value;
+}
+}
+        document.setupForm.style.display = 'none';
+        document.storyForm.style.display = '';
+
+      }
+      function returnHandler() {
+        document.setupForm.style.display = '';
+        document.storyForm.style.display = 'none';
+      }
+</script>
+  <body>
+    <h1>Story Generator</h1>
+    <p>Enter appropriate values in all of the text boxes. Then click the Done button to generate a story with your entered values plugged into it.</p>
+    <br>
+<form name="setupForm">
+
+        <label>noun:</label>
+        <input type="text" value="possum"><br>
+      <label>past tense verb:</label>
+      <input type="text" value="slurped"><br>
+      <label>adjective:</label>
+      <input type="text" value="hot pink"><br>
+      <label>past tense verb:</label>
+      <input type="text" value="catapulted"><br>
+    <label>adjective:</label>
+    <input type="text" value="frenetic"><br>
+          <br>
+      <button type="button" onlick="doneHandler()">Done</button>
+<input type="Reset">
+
+
+  </form>
+  <form name="storyForm" style="display: none;">
+
+  <p>  It was a dark and stormy night. A shot rang out! A <b>possum</b> slammed. The maid <b>slurped</b>. Sunddenly, a <b>hot pink</b> ship appeared on the horizon! While millions of people <b>catapulted</b>, the king lived in luxury. Meanwhile, on a <b>frenetic<b/> farm in Kansas, aboy was growing up.</p>
+  <br>
+  <br>
+  The End.
+  <br>
+  <br>
+  <br>
+
+      <button type="button" onlick="returnHandler()">Return</button>
+  </form>
+
+    
+
+  </body>
+</html>

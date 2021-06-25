@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+    <p id="demo"></p>
+    <br>
+  <input type="button" value="Click Me!" onclick="Myfunc">
+  <script type="text/javascript">
+
+function Myfunc () {
+
+let el = document.getElementById('demo');
+el.innerHTML = 'Hello Javascript';
+}
+
+
+  </script>
+  </body>
+</html>

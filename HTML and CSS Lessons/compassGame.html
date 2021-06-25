@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Compass Game</title>
+    <style>
+      .arrows:before {
+          content: '\27f7';
+          font-size: 2em;
+          color: blue;
+      }
+      .diagnol {transform:rotate(-45deg);}
+      .cell {
+        display: table-cell;
+        width: 100px;
+        text-align: center;
+        font-size: 2em;
+        color: red;
+      }
+      .inputDir {
+        width: 2em;
+      }
+      input[type=text] {
+        width: 20px;
+      }
+      b {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+
+      <h1>Compass Game</h1>
+      <p>The direction letters on the "compass" are scrambled. Press the arrows to properly position the direction letters.</p>
+      <br>
+      <br>
+      <h1 id="result"> </h1>
+
+      <div class="cell">
+      <button class="arrows diagnol" type="button" name ="button" id="arrows1" onclick="swap(east, south)"></button>
+      </div>
+
+        <div id="south" class="cell">
+         E
+        </div>
+        <br>
+        <br>
+        <div id="east" class="cell">
+        S
+      </div>
+
+      <div class="cell">
+        <button class="arrows" type="button" name = "button" id="arrows2" onclick="swap(west, east)"></button>
+      </div>
+
+      <div id="west" class="cell">
+      N
+      </div>
+      <br>
+      <br>
+      <div class="cell">  </div>
+
+
+      <div id="north" class="cell">
+        W
+      </div>
+
+      <div class="cell">
+      <button class="arrows diagnol" type="button" name ="button" id="arrows3" onclick="swap(north, west)"></button>
+      </div>
+      <br>
+      <br>
+        <p>To restart the game, press<i>Restart</i>, enter N, S, E, and W in any order in the boxes below, and the press<i>Update</i>.</p>
+
+  <form class="" action="index.html" method="post">
+    <input type="button" value="Restart" onclick="restartClickHandeler()" id="restart" disabled>
+    <br>
+    <br>
+    Top: <input type="text" name="Top" id="topForm" maxlength="1" disabled >
+    Left: <input type="text" name="Left" id="leftForm" maxlength="1" disabled>
+    Right: <input type="text" name="Right" id="rightForm" maxlength="1" disabled>
+    Bottom:<input type="text" name="Bottom" id="bottomForm" maxlength="1" disabled>     <br><br>
+</form>
+  <input type="button" value="Update" onclick="updateClickHandeler()" id="updateForm" disabled>
+<br>
+
+  <script type="text/javascript">
+
+    let south = document.getElementById('south');
+    let north = document.getElementById('north');
+    let east = document.getElementById('east');
+    let west = document.getElementById('west');
+
+    let directions = ["S", "N", "E", "W"];
+
+    let res = document.getElementById('result');
+
+    let btn1 = document.getElementById('arrows1');
+    let btn2 = document.getElementById('arrows2');
+    let btn3 = document.getElementById('arrows3');
+    let restartBtn = document.getElementById('restart');
+    let updateBtn = document.getElementById('updateForm');
+    let topInput = document.getElementById('topForm');
+    let leftInput = document.getElementById('leftForm');
+    let rightInput = document.getElementById('rightForm');
+    let bottomInput = document.getElementById('bottomForm');
+
+    function swap(right, left) {
+      let temp = right.innerHTML;
+          right.innerHTML = left.innerHTML;
+          left.innerHTML = temp;
+          isWon();
+
+    }
+    function restartClickHandeler() {
+      south.innerHTML = "";
+      north.innerHTML = "";
+      east.innerHTML = "";
+      west.innerHTML = "";
+      restartBtn.disabled = true;
+      topInput.disabled = false;
+      leftInput.disabled= false;
+      rightInput.disabled= false;
+      bottomInput.disabled = false;
+      updateBtn.disabled = false;
+
+
+}
+
+    function updateClickHandeler() {
+      south.innerHTML = topInput.value.toUpperCase();
+      east.innerHTML = leftInput.value.toUpperCase();
+      west.innerHTML = rightInput.value.toUpperCase();
+      north.innerHTML = bottomInput.value.toUpperCase();
+      res.innerHTML = "";
+      restartBtn.disabled = true;
+      topInput.disabled = true;
+      leftInput.disabled= true ;
+      rightInput.disabled =  true;
+      bottomInput.disabled = true;
+      btn1.disabled = false;
+      btn2.disabled = false;
+      btn3.disabled = false;
+      updateBtn.disabled = true;
+    }
+
+
+  function isWon() {
+
+  if(south.innerHTML.trim().toUpperCase() === 'S' &&
+     north.innerHTML.trim().toUpperCase() === 'N' &&
+     west.innerHTML.trim().toUpperCase() === 'W' &&
+     east.innerHTML.trim().toUpperCase() === 'E') {
+     res.innerHTML = 'YOU WON!!!';
+     btn1.disabled = true;
+     btn2.disabled = true;
+     btn3.disabled = true;
+     restartBtn.disabled = false;
+
+
+     }
+}
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+PROGRAM Guess the Numbeer ver.1
+   Set number to RAND from 1 to 10 // 5
+   user answer To -1
+
+iF USERANSWER IS EQUAL NTO NUMBER
+print " You Won"
+ELSE
+   PRINT "yOU LOSE"
+
+
+WHILE USERaNSWERT IS NOT EQUAL TO NUMBER
+user answer < INPUT: "ENTER A NUMBER" 1 TOM 10" // 7
+
+user answer < INPUT: "ENTER A NUMBER" 1 TOM 10" // 1 2 3 4 5
+
+IF username is more then number
+   PRINT "try less number"
+ELSE IF userAnswer is less then number
+PRINT "tRY MORE NUMBERS"
+
+user answer < INPUT: "ENTER A NUMBER" 1 TOM 10" // 1 2 3 4 5
+
+END IF
+
+ENDWHILE
+print "you won"

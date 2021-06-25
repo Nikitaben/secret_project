@@ -1,0 +1,53 @@
+ROGRAM MilesPreGallon ver 2
+	SET continue <- INPUT "Do want to calculate miles pre gallon? (y/n):"  // 'n'
+	
+	SET miles <- 0
+	SET totalMiles <- 0
+	
+	SET gallons <- 0
+	SET totalGallons <- 0
+	WHILE continue is equal to 'y'
+		
+		miles <- INPUT "How many miles are on the trip odometer?"				
+		miles <- call checkValue(miles, 0)
+		gallons <- INPUT "How many gallons did it take to fill the vehicle?"
+		gallons <- call checkValue(gallons, 1)
+		totalMiles <- totalMiles + miles
+		INCREMENT totalGallons BY gallons										
+		continue <- INPUT "Do you wish to contiue? (y/n):"						
+		
+	ENDWHILE
+	IF totalGallons is not equal to 0
+		PRINT "Overall MPG = " + ( totalMiles / totalGallons )
+	ENDWHILE
+	PRINT "Have a nice day"
+	
+END
+Function checkValue
+	Pass In: inputValue, minValue
+	
+	WHILE inputValue is less then minValue									
+		inputValue <- INPUT "Incorrect data. Please, re-enter."
+	ENDWHILE
+	
+	PassOut: inputValue	
+EndFunction
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

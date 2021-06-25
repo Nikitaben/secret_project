@@ -1,0 +1,30 @@
+/*
+selector(s) {property: value;}
+*/
+
+* {
+  font-family: serif;
+}
+.h1 {
+  text-align: center;
+}
+.h2 {
+  text-align: center;
+}
+.gray-background {
+  background-color: gray
+  
+}
+p {
+  margin: 0 50px;
+  padding: 5px;
+    text-indent: 10px;
+border: 4px dashed red
+
+}
+.bold {
+  font-weight: bold;
+}
+.strike-through {
+  text-decoration: line-through;
+}

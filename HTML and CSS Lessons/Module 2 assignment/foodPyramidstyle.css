@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  justify-content:center;
+}
+ thead {
+  background: red;
+  color: white;
+
+}
+table, thead, th, td {
+  border: thin solid;
+}
+th, td{
+   padding: 15px;
+   text-align: center;
+}
+th {
+  font-weight: bold;
+}
+table {
+  width: 550px;
+  height: 350px;
+}
+table caption {
+  font-size: 45px;
+}
+table tr td:first-child{
+	text-align: left;
+}

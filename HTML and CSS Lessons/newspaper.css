@@ -1,0 +1,29 @@
+/*
+selector (s) property: value;
+*/
+.h1, h2{
+  text-align: center;
+}
+.bold {
+  font-weight: bold;
+}
+.body{
+
+  background-color: : hsl(180, 100%, 50%);
+}
+.underline{
+  text-decoration: underline;
+}
+
+.italic {
+  text-decoration:
+}
+.silver{
+  color: hsl(0, 0%, 75%)
+}
+.Fuchsia {
+  color: rgb(255, 0, 255);
+}
+.bright-orange {
+  color: #ffa500;
+}

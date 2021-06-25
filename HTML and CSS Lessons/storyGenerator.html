@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <meta charset="utf-8">
+
+    <title>Story Generator</title>
+    <style>
+     div {
+       margin-bottom: 5px;
+     }
+     label {
+       display: inline-block;
+       width: 150px;
+       text-align: right;
+     }
+     h2 {
+       color: blue;
+       font-style: normal;
+       font-family: monospace;
+
+     }
+    </style>
+  </head>
+
+  <body>
+      <h1>Story Generator</h1>
+
+      <p>Enter appropriate values in all of the text boxes. Then click the Done button to generate a story with your entered values plugged into it.</p>
+      <br>
+      <form name="setupForm">
+
+      <div>
+      <label>noun:</label>
+      <input type="text" value="possum">
+      </div>
+      <div>
+      <label>past tense verb:</label>
+      <input type="text" value="slurped">
+      </div>
+      <div>
+        <label>adjective:</label>
+        <input type="text" value="hot pink">
+      </div>
+      <div>
+        <label>past tense verb:</label>
+        <input type="text" value="catapulted">
+      </div>
+      <div>
+        <label>adjective:</label>
+      <input type="text" value="frenetic">
+      </div>
+
+          <br>
+    <button type="button" onclick="doneHandler()">Done</button>
+   <input type="Reset">
+
+
+   </form>
+  <form name="storyForm" style="display: none;">
+
+  <h2> It was a dark and stormy night. A shot rang out! A <b></b> slammed. The maid <b></b>. Sunddenly, a <b></b> ship appeared on the horizon! While millions of people <b></b>, the king lived in luxury. Meanwhile, on a <b></b>farm in Kansas, aboy was growing up.
+  <br>
+  <br>
+  The End.</h2>
+  <br>
+  <br>
+  <br>
+
+      <button type="button" onclick="returnHandler()">Return</button>
+  </form>
+
+    <script type="text/javascript">
+
+      function doneHandler() {
+
+        let inputs = document.querySelectorAll('input[type=text]');
+        let missing = document.querySelectorAll('b');
+
+        //console.log(inputs);
+        //console.log(missing);
+for (var i = 0; i <inputs.length; i++) {
+  if(inputs[i].value.trim() === '') {
+  missing[i].innerHTML = '&lt missing text &gt;';
+  missing[i].style.color = 'red';
+}
+else {
+  missing[i].innerHTML = inputs[i].value;
+}
+}
+        document.setupForm.style.display = 'none';
+        document.storyForm.style.display = '';
+
+      }
+      function returnHandler() {
+        document.setupForm.style.display = '';
+        document.storyForm.style.display = 'none';
+      }
+</script>
+
+  </body>
+</html>

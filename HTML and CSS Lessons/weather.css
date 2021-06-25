@@ -1,0 +1,25 @@
+nav ul, li {
+  font-size: 1.2em;
+  display: inline-block;
+  padding: 0;
+  text-align: left;
+  list-style: none;
+
+}
+
+a:hover {
+  background-color: silver;
+text-decoration: none;
+}
+
+.left-cell {
+  text-align: right;
+  width: 150px;
+  font-size: 20px;
+  font-weight: bold;
+ padding-right: 1em;
+}
+.right-cell, .left-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
